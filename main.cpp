@@ -99,6 +99,7 @@ vector<array<int, 2>> GeneratePoints(size_t size, int min, int max) {
 	uniform_int_distribution<uint64_t> rnd(0, max + 1 - min);
 
 	for (int i = 0; i < size; i++) {
+		size_t index = mt() % points.size();
 		array<int, 2> temp = { rnd(mt) + min,rnd(mt) + min };
 		bool equalFlag = false;
 		for (const auto& p : points) {
